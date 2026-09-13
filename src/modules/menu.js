@@ -1,8 +1,8 @@
 // Importación del módulo 'readline' para manejar la entrada y salida de la consola
 import readline from "readline";
 
-// Importación de la función 'peticion1' desde el archivo 'peticion1.js'
 import { peticion1 } from "./peticion1.js";
+import { peticion2 } from "./peticion2.js";
 // Creación de una interfaz de lectura para capturar la entrada del usuario desde la consola
 const entrada = readline.createInterface({
     input: process.stdin,
@@ -31,6 +31,13 @@ function menu() {
             case "1":
                 await peticion1();
                 break;
+                // Maneja la opción 2, solicitando al usuario que ingrese un username y luego llama a la función 'peticion2' con ese username
+                    case "2":
+                        entrada.question("Ingrese el username del usuario: ", async (username) => {
+                            await peticion2(username);
+                        });
+                        menu();
+                        return;
 
             case "0":
                 console.log("Programa finalizado.");
