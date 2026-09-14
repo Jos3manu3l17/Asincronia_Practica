@@ -4,6 +4,7 @@ import readline from "readline";
 import { peticion1 } from "./peticion1.js";
 import { peticion2 } from "./peticion2.js";
 import { peticion3 } from "./peticion3.js"; 
+import { peticion4 } from "./Peticion4.js";
 // Creación de una interfaz de lectura para capturar la entrada del usuario desde la consola
 const entrada = readline.createInterface({
     input: process.stdin,
@@ -44,6 +45,10 @@ function menu() {
                                 await peticion3(nombre);
                             });
                             return;
+
+            case "4":
+                await peticion4();
+                break;
 
             case "0":
                 console.log("Programa finalizado.");
