@@ -3,6 +3,7 @@ import readline from "readline";
 
 import { peticion1 } from "./peticion1.js";
 import { peticion2 } from "./peticion2.js";
+import { peticion3 } from "./peticion3.js"; 
 // Creación de una interfaz de lectura para capturar la entrada del usuario desde la consola
 const entrada = readline.createInterface({
     input: process.stdin,
@@ -36,8 +37,13 @@ function menu() {
                         entrada.question("Ingrese el username del usuario: ", async (username) => {
                             await peticion2(username);
                         });
-                        menu();
                         return;
+
+                        case "3":
+                            entrada.question("Ingrese el nombre del usuario: ", async (nombre) => {
+                                await peticion3(nombre);
+                            });
+                            return;
 
             case "0":
                 console.log("Programa finalizado.");
