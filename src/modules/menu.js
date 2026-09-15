@@ -36,13 +36,15 @@ function menu() {
                 // Maneja la opción 2, solicitando al usuario que ingrese un username y luego llama a la función 'peticion2' con ese username
                     case "2":
                         entrada.question("Ingrese el username del usuario: ", async (username) => {
-                            await peticion2(username);
+                          await peticion2(username);
+                          menu();
                         });
                         return;
 
                         case "3":
                             entrada.question("Ingrese el nombre del usuario: ", async (nombre) => {
-                                await peticion3(nombre);
+                              await peticion3(nombre);
+                              menu();
                             });
                             return;
 
