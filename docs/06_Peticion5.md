@@ -8,6 +8,8 @@ Además, se deben agregar a cada usuario todos sus álbumes y, dentro de cada á
 
 La información se organiza directamente dentro de los objetos obtenidos de la API para construir una estructura de datos completa y relacionada.
 
+
+
 ---
 
 ## 2. Requerimiento
