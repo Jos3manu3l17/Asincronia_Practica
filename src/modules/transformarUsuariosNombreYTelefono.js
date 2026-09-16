@@ -1,4 +1,4 @@
-async function peticion4() {
+async function transformarUsuariosNombreYTelefono  () {
 
     try {
         // Realizar la petición a la API
@@ -29,4 +29,4 @@ async function peticion4() {
     }
 }
 
-export { peticion4 };
+export { transformarUsuariosNombreYTelefono   };

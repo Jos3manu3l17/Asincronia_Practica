@@ -1,4 +1,4 @@
-async function peticion2(username) {
+async function obtenerUsuarioAlbumesYFotos  (username) {
     // Definición de una función asíncrona que permite usar 'await' para manejar promesas
     try {
         const respuestaUsuarios = await fetch(
@@ -63,4 +63,4 @@ async function peticion2(username) {
     }
 }
 
-export { peticion2 };
+export { obtenerUsuarioAlbumesYFotos   };

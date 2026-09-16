@@ -1,5 +1,5 @@
 // Definición de una función asíncrona que permite usar 'await' para manejar promesas
-async function peticion1() {
+async function obtenerTareasPendientesPorUsuario () {
     try {
         const respuestaUsuarios = await fetch("https://jsonplaceholder.typicode.com/users");
 
@@ -39,4 +39,4 @@ async function peticion1() {
 }
 
 // Exportación nombrada de la función para ser utilizada en otros módulos
-export { peticion1 };
+export { obtenerTareasPendientesPorUsuario  };
