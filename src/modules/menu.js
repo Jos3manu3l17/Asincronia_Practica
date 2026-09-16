@@ -1,11 +1,11 @@
 // Importación del módulo 'readline' para manejar la entrada y salida de la consola
 import readline from "readline";
 
-import { peticion1 } from "./peticion1.js";
-import { peticion2 } from "./peticion2.js";
-import { peticion3 } from "./peticion3.js"; 
-import { peticion4 } from "./Peticion4.js";
-import { peticion5 } from "./Peticion5.js";
+import { obtenerTareasPendientesPorUsuario  } from "./obtenerTareasPendientesPorUsuario.js";
+import { obtenerUsuarioAlbumesYFotos  } from "./obtenerUsuarioAlbumesYFotos.js";
+import { obtenerPostsYComentariosPorUsuario   } from "./obtenerPostsYComentariosPorUsuario.js"; 
+import { transformarUsuariosNombreYTelefono   } from "./transformarUsuariosNombreYTelefono.js";
+import { obtenerUsuariosConPostsYAlbumes  } from "./obtenerUsuariosConPostsYAlbumes.js";
 // Creación de una interfaz de lectura para capturar la entrada del usuario desde la consola
 const entrada = readline.createInterface({
     input: process.stdin,
@@ -32,29 +32,29 @@ function menu() {
 
         switch (opcion) {
             case "1":
-                await peticion1();
+                await obtenerTareasPendientesPorUsuario ();
                 break;
                 // Maneja la opción 2, solicitando al usuario que ingrese un username y luego llama a la función 'peticion2' con ese username
                     case "2":
                         entrada.question("Ingrese el username del usuario: ", async (username) => {
-                          await peticion2(username);
+                          await obtenerUsuarioAlbumesYFotos (username);
                           menu();
                         });
                         return;
 
                         case "3":
                             entrada.question("Ingrese el nombre del usuario: ", async (nombre) => {
-                              await peticion3(nombre);
+                              await obtenerPostsYComentariosPorUsuario (nombre);
                               menu();
                             });
                             return;
 
             case "4":
-                await peticion4();
+                await transformarUsuariosNombreYTelefono ();
                 break;
 
             case "5":
-                await peticion5();
+                await obtenerUsuariosConPostsYAlbumes ();
                 break;
 
             case "0":

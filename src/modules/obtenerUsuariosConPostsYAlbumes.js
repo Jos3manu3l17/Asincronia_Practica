@@ -1,4 +1,4 @@
-async function peticion5() {
+async function obtenerUsuariosConPostsYAlbumes  () {
 
     try {
 
@@ -94,4 +94,4 @@ async function peticion5() {
     }
 }
 
-export { peticion5 };
+export { obtenerUsuariosConPostsYAlbumes   };

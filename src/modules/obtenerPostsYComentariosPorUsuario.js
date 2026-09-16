@@ -1,4 +1,4 @@
-async function peticion3(nombre) {
+async function obtenerPostsYComentariosPorUsuario  (nombre) {
 
     try {
         // Realiza una petición HTTP para obtener todos los usuarios desde la API
@@ -53,4 +53,4 @@ async function peticion3(nombre) {
     }
 }
 
-export { peticion3 };
+export { obtenerPostsYComentariosPorUsuario   };
