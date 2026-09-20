@@ -1,4 +1,4 @@
-# Petición 4 — Consultar usuarios y modificar la respuesta
+# Transformar usuarios a nombre y teléfono
 
 ## 1. Objetivo
 
@@ -47,7 +47,7 @@ Guardar el resultado en un nuevo arreglo
 ## 5. Código utilizado
 
 ```js
-async function peticion4() {
+async function transformarUsuariosNombreYTelefono() {
 
     try {
 
@@ -78,7 +78,7 @@ async function peticion4() {
     }
 }
 
-export { peticion4 };
+export { transformarUsuariosNombreYTelefono };
 ```
 
 ---
@@ -88,10 +88,10 @@ export { peticion4 };
 ### Función
 
 ```js
-async function peticion4() {
+async function transformarUsuariosNombreYTelefono() {
 ```
 
-Se crea la función `peticion4`.
+Se crea la función `transformarUsuariosNombreYTelefono`.
 
 Se utiliza `async` porque dentro de la función se realiza una petición asíncrona a la API utilizando `await`.
 
@@ -296,7 +296,7 @@ Se muestra un mensaje entendible y posteriormente el mensaje específico del err
 ## 11. Exportación
 
 ```js
-export { peticion4 };
+export { transformarUsuariosNombreYTelefono };
 ```
 
 Permite exportar la función para que pueda ser utilizada desde otro módulo del proyecto.
@@ -304,14 +304,14 @@ Permite exportar la función para que pueda ser utilizada desde otro módulo del
 En `menu.js` se importa mediante:
 
 ```js
-import { peticion4 } from "./peticion4.js";
+import { transformarUsuariosNombreYTelefono } from "./transformarUsuariosNombreYTelefono.js";
 ```
 
 Y la opción 4 del menú ejecuta:
 
 ```js
 case "4":
-    await peticion4();
+    await transformarUsuariosNombreYTelefono();
     break;
 ```
 

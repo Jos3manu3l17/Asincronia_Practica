@@ -1,4 +1,4 @@
-# 02_peticion1
+# 02_obtenerTareasPendientesPorUsuario
 
 ## Listar tareas pendientes por cada usuario
 
@@ -13,7 +13,7 @@ Implementar la primera funcionalidad de la actividad utilizando la API pública 
 
 ### Lógica
 
-1. Ejecutar `peticion1()`.
+1. Ejecutar `obtenerTareasPendientesPorUsuario()`.
 2. Consultar todos los usuarios.
 3. Convertir la respuesta con `.json()`.
 4. Consultar todas las tareas.
@@ -25,13 +25,13 @@ Implementar la primera funcionalidad de la actividad utilizando la API pública 
 
 ### Conexión con el menú
 
-El menú recibe la opción mediante `readline`. Al seleccionar `1`, ejecuta `peticion1()` y espera a que termine antes de volver a mostrar el menú.
+El menú recibe la opción mediante `readline`. Al seleccionar `1`, ejecuta `obtenerTareasPendientesPorUsuario()` y espera a que termine antes de volver a mostrar el menú.
 
-### Código de `modulos/menu.js`
+### Código de `src/modules/menu.js`
 
 ```js
 import readline from "readline";
-import { peticion1 } from "./peticion1.js";
+import { obtenerTareasPendientesPorUsuario } from "./obtenerTareasPendientesPorUsuario.js";
 
 const entrada = readline.createInterface({
     input: process.stdin,
@@ -56,7 +56,7 @@ function menu() {
 
         switch (opcion) {
             case "1":
-                await peticion1();
+                await obtenerTareasPendientesPorUsuario();
                 break;
 
             case "0":
@@ -80,12 +80,12 @@ export { menu };
 `index.js` continúa centralizando las exportaciones:
 
 ```js
-export * from "./modulos/menu.js";
-export * from "./modulos/peticion1.js";
-export * from "./modulos/peticion2.js";
-export * from "./modulos/peticion3.js";
-export * from "./modulos/peticion4.js";
-export * from "./modulos/peticion5.js";
+export * from "./src/modules/menu.js";
+export * from "./src/modules/obtenerTareasPendientesPorUsuario.js";
+export * from "./src/modules/obtenerUsuarioAlbumesYFotos.js";
+export * from "./src/modules/obtenerPostsYComentariosPorUsuario.js";
+export * from "./src/modules/transformarUsuariosNombreYTelefono.js";
+export * from "./src/modules/obtenerUsuariosConPostsYAlbumes.js";
 ```
 
 ### Arquitectura
@@ -97,7 +97,7 @@ index.js
    ↓
 menu.js
    ↓
-peticion1.js
+obtenerTareasPendientesPorUsuario.js
    ↓
 JSONPlaceholder API
 ```
