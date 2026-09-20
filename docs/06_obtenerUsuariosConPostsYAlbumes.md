@@ -1,4 +1,4 @@
-# Petición 5 — Consulta completa de usuarios
+# Obtener usuarios con posts y álbumes
 
 ## 1. Objetivo
 
@@ -93,7 +93,7 @@ Agregar álbumes al usuario
 ## 5. Código utilizado
 
 ```js
-async function peticion5() {
+async function obtenerUsuariosConPostsYAlbumes() {
 
     try {
 
@@ -189,7 +189,7 @@ async function peticion5() {
     }
 }
 
-export { peticion5 };
+export { obtenerUsuariosConPostsYAlbumes };
 ```
 
 ---
@@ -528,7 +528,7 @@ Esto evita que el programa termine sin informar al usuario qué ocurrió.
 ## 19. Exportación
 
 ```js
-export { peticion5 };
+export { obtenerUsuariosConPostsYAlbumes };
 ```
 
 Permite exportar la función para utilizarla desde el resto de la aplicación.
