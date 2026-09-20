@@ -1,4 +1,4 @@
-# 03_peticion2
+# 03_obtenerUsuarioAlbumesYFotos
 
 ## Buscar usuario y listar álbumes con sus fotografías
 
@@ -17,7 +17,7 @@ El programa solicita por teclado el `username` de un usuario, busca la coinciden
 ### Lógica de la funcionalidad
 
 1. El menú solicita al usuario el `username`.
-2. El `username` se envía a `peticion2()`.
+2. El `username` se envía a `obtenerUsuarioAlbumesYFotos()`.
 3. Se consulta `/users`.
 4. Se convierte la respuesta con `.json()`.
 5. Se utiliza `find()` para buscar el usuario cuyo `username` coincida.
@@ -32,16 +32,16 @@ El programa solicita por teclado el `username` de un usuario, busca la coinciden
 
 ### Manejo de entrada por teclado
 
-Inicialmente `peticion2.js` tenía su propio objeto `readline`. Esto generaba conflicto porque `menu.js` ya controlaba la entrada de la terminal.
+Inicialmente `obtenerUsuarioAlbumesYFotos.js` tenía su propio objeto `readline`. Esto generaba conflicto porque `menu.js` ya controlaba la entrada de la terminal.
 
 Para solucionarlo, se dejó una sola instancia de `readline` en `menu.js`.
 
-Ahora el menú recibe el `username` y se lo entrega a `peticion2(username)`.
+Ahora el menú recibe el `username` y se lo entrega a `obtenerUsuarioAlbumesYFotos(username)`.
 
-### Código de `peticion2.js`
+### Código de `src/modules/obtenerUsuarioAlbumesYFotos.js`
 
 ```js
-async function peticion2(username) {
+async function obtenerUsuarioAlbumesYFotos(username) {
 
     try {
         const respuestaUsuarios = await fetch(
@@ -103,7 +103,7 @@ async function peticion2(username) {
     }
 }
 
-export { peticion2 };
+export { obtenerUsuarioAlbumesYFotos };
 ```
 
 ### Conexión con el menú
@@ -111,7 +111,7 @@ export { peticion2 };
 En `menu.js` se importa la función:
 
 ```js
-import { peticion2 } from "./peticion2.js";
+import { obtenerUsuarioAlbumesYFotos } from "./obtenerUsuarioAlbumesYFotos.js";
 ```
 
 Cuando se selecciona la opción `2`, se solicita el username y se ejecuta la petición:
@@ -119,7 +119,7 @@ Cuando se selecciona la opción `2`, se solicita el username y se ejecuta la pet
 ```js
 case "2":
     entrada.question("Ingrese el username del usuario: ", async (username) => {
-        await peticion2(username);
+        await obtenerUsuarioAlbumesYFotos(username);
         menu();
     });
     return;
@@ -127,7 +127,7 @@ case "2":
 
 ### ¿Por qué se utiliza `await`?
 
-`peticion2()` es una función asíncrona porque realiza peticiones con `fetch()`.
+`obtenerUsuarioAlbumesYFotos()` es una función asíncrona porque realiza peticiones con `fetch()`.
 
 El `await` permite esperar la finalización de la petición antes de continuar con el siguiente paso de la función.
 

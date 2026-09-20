@@ -1,4 +1,4 @@
-# Petición 3 — Filtrar posts por nombre y agregar comentarios
+# Obtener posts y comentarios por usuario
 
 ## 1. Objetivo
 
@@ -31,7 +31,7 @@ El proceso funciona de la siguiente manera:
 ## 3. Código utilizado
 
 ```js
-async function peticion3(nombre) {
+async function obtenerPostsYComentariosPorUsuario(nombre) {
 
     try {
 
@@ -85,16 +85,16 @@ async function peticion3(nombre) {
     }
 }
 
-export { peticion3 };
+export { obtenerPostsYComentariosPorUsuario };
 ```
 
 ---
 
 ## 4. Explicación de las principales instrucciones
 
-### `async function peticion3(nombre)`
+### `async function obtenerPostsYComentariosPorUsuario(nombre)`
 
-Se crea la función `peticion3` y se recibe como parámetro el nombre ingresado por el usuario.
+Se crea la función `obtenerPostsYComentariosPorUsuario` y se recibe como parámetro el nombre ingresado por el usuario.
 
 La palabra `async` permite utilizar `await` dentro de la función.
 
@@ -197,7 +197,7 @@ Si ocurre un problema, el programa muestra un mensaje en lugar de detenerse ines
 ### `export`
 
 ```js
-export { peticion3 };
+export { obtenerPostsYComentariosPorUsuario };
 ```
 
 Permite exportar la función para utilizarla desde otros archivos del proyecto.
@@ -209,7 +209,7 @@ Permite exportar la función para utilizarla desde otros archivos del proyecto.
 La función se importa en `menu.js`:
 
 ```js
-import { peticion3 } from "./peticion3.js";
+import { obtenerPostsYComentariosPorUsuario } from "./obtenerPostsYComentariosPorUsuario.js";
 ```
 
 La opción 3 solicita el nombre mediante el `readline` que ya existe en `menu.js`:
@@ -217,13 +217,13 @@ La opción 3 solicita el nombre mediante el `readline` que ya existe en `menu.js
 ```js
 case "3":
     entrada.question("Ingrese el nombre del usuario: ", async (nombre) => {
-        await peticion3(nombre);
+        await obtenerPostsYComentariosPorUsuario(nombre);
         menu();
     });
     return;
 ```
 
-No se crea otro `readline` dentro de `peticion3.js`.
+No se crea otro `readline` dentro de `obtenerPostsYComentariosPorUsuario.js`.
 
 Esto permite mantener el manejo del teclado centralizado en el menú.
 
